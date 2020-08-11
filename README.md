@@ -22,3 +22,8 @@ Check for deployments via helm
 
 `helm ls`
 
+References:
+- https://github.com/bitnami/charts/tree/master/bitnami/minio
+- https://docs.bitnami.com/tanzu-application-catalog/get-started-tanzu-application-catalog/
+- https://helm.sh/docs/intro/using_helm/
+- https://docs.bitnami.com/tanzu-application-catalog/how-to/consume-tac-harbor/
