@@ -18,3 +18,7 @@ When you modify configuration in `values.yaml` file, update helm installation fo
 
 `helm upgrade minio-1 minio/ -f minio/values-offline.yaml`
 
+Check for deployments via helm 
+
+`helm ls`
+
