@@ -1,0 +1,6 @@
+images:
+- image: gcr.io/sys-2b0109it/demo/bitnami/mongodb:4.4.1-centos-7-r0
+- image: gcr.io/sys-2b0109it/demo/bitnami/kubectl:1.18.8-centos-7-r23
+- image: gcr.io/sys-2b0109it/demo/bitnami/custom-base-image:2019-06
+- image: gcr.io/sys-2b0109it/demo/bitnami/mongodb-exporter:0.11.1-centos-7-r21
+

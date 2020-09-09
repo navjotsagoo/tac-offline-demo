@@ -1,0 +1,6 @@
+dependencies:
+  - name: common
+    version: 0.x.x
+    repository: https://charts.trials.tac.bitnami.com/demo
+    tags:
+      - bitnami-common

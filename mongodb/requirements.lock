@@ -1,0 +1,6 @@
+dependencies:
+- name: common
+  repository: https://charts.trials.tac.bitnami.com/demo
+  version: 0.6.2
+digest: sha256:b7f7a74a3659fcc65f847389512da669930d40877ffb16eeca19becf0957d2d5
+generated: "2020-09-09T09:37:04.2288605Z"
