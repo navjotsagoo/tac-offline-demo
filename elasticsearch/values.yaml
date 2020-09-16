@@ -5,7 +5,7 @@
 global:
   # imageRegistry: myRegistryName
   # imagePullSecrets:
-  #   - acr-registry
+  #   - myRegistryKeySecretName
   # storageClass: myStorageClass
   ## Coordinating name to be used in the Kibana subchart (service name)
   ##
@@ -17,9 +17,9 @@ global:
 ## ref: https://hub.docker.com/r/bitnami/elasticsearch/tags/
 ##
 image:
-  registry: applecider.azurecr.io
-  repository: tanzu-apps-catalog-offline-registry/bitnami/elasticsearch
-  tag: 7.8.1-centos-7-r6
+  registry: gcr.io
+  repository: sys-2b0109it/demo/bitnami/elasticsearch
+  tag: 7.9.1-centos-7-r0
   ## Specify a imagePullPolicy
   ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
   ## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
@@ -29,8 +29,8 @@ image:
   ## Secrets must be manually created in the namespace.
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
   ##
-  pullSecrets:
-    - acr-registry
+  # pullSecrets:
+  #   - myRegistryKeySecretName
   ## Set to true if you would like to see extra information on logs
   ## ref:  https://github.com/bitnami/minideb-extras/#turn-on-bash-debugging
   ##
@@ -49,8 +49,8 @@ image:
 ##
 sysctlImage:
   enabled: true
-  registry: applecider.azurecr.io
-  repository: tanzu-apps-catalog-offline-registry/bitnami/custom-base-image
+  registry: gcr.io
+  repository: sys-2b0109it/demo/bitnami/custom-base-image
   tag: 2019-06
   ## Specify a imagePullPolicy
   ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
@@ -61,8 +61,8 @@ sysctlImage:
   ## Secrets must be manually created in the namespace.
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
   ##
-  pullSecrets:
-    - acr-registry
+  # pullSecrets:
+  #   - myRegistryKeySecretName
 
 ## Init containers parameters:
 ## volumePermissions: Change the owner and group of the persistent volume mountpoint to runAsUser:fsGroup values from the securityContext section.
@@ -70,16 +70,16 @@ sysctlImage:
 volumePermissions:
   enabled: false
   image:
-    registry: applecider.azurecr.io
-    repository: tanzu-apps-catalog-offline-registry/bitnami/custom-base-image
+    registry: gcr.io
+    repository: sys-2b0109it/demo/bitnami/custom-base-image
     tag: 2019-06
     pullPolicy: Always
     ## Optionally specify an array of imagePullSecrets.
     ## Secrets must be manually created in the namespace.
     ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
     ##
-    pullSecrets:
-      - acr-registry
+    # pullSecrets:
+    #   - myRegistryKeySecretName
   ## Init container' resource requests and limits
   ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
   ##
@@ -616,16 +616,16 @@ curator:
   enabled: false
   name: curator
   image:
-    registry: applecider.azurecr.io
+    registry: gcr.io
     repository: sys-2b0109it/demo/bitnami/elasticsearch-curator
-    tag: 5.8.1-centos-7-r114
+    tag: 5.8.1-centos-7-r137
     pullPolicy: IfNotPresent
     ## Optionally specify an array of imagePullSecrets.
     ## Secrets must be manually created in the namespace.
     ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
     ##
-    pullSecrets:
-      - acr-registry
+    # pullSecrets:
+    #   - myRegistryKeySecretName
 
   cronjob:
     # At 01:00 every day
@@ -784,16 +784,16 @@ metrics:
   enabled: false
   name: metrics
   image:
-    registry: applecider.azurecr.io
+    registry: gcr.io
     repository: sys-2b0109it/demo/bitnami/elasticsearch-exporter
-    tag: 1.1.0-centos-7-r115
+    tag: 1.1.0-centos-7-r138
     pullPolicy: IfNotPresent
     ## Optionally specify an array of imagePullSecrets.
     ## Secrets must be manually created in the namespace.
     ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
     ##
-    pullSecrets:
-      - acr-registry
+    # pullSecrets:
+    #   - myRegistryKeySecretName
   ## Elasticsearch Prometheus exporter service type
   ##
   service:

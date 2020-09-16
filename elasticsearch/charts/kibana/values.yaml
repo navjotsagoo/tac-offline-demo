@@ -3,9 +3,9 @@
 ## Current available global Docker image parameters: imageRegistry, imagePullSecrets and storageClass
 ##
 global: {}
-#   imageRegistry: myRegistryName
-#   imagePullSecrets:
-#     - acr-registry
+imageRegistry: applecider.azurecr.io
+imagePullSecrets:
+  - acr-registry
 #   storageClass: myStorageClass
 
 ## Bitnami Kibana image version
@@ -13,8 +13,8 @@ global: {}
 ##
 image:
   registry: applecider.azurecr.io
-  repository: tanzu-apps-catalog-offline-registry/bitnami/kibana
-  tag: 7.8.1-centos-7-r0
+  repository: tanzu-apps-catalog-offline-registry@sha256
+  tag: fdd2b66f8f498e7f5563e697e1b84e22e7db440187b013acf93b188aecd29d1d
   ## Specify a imagePullPolicy
   ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
   ## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
@@ -109,8 +109,8 @@ volumePermissions:
   enabled: false
   image:
     registry: applecider.azurecr.io
-    repository: tanzu-apps-catalog-offline-registry/bitnami/custom-base-image
-    tag: 2019-06
+    repository: tanzu-apps-catalog-offline-registry@sha256
+    tag: d9420538c705bb5d2e7ef3aa93ccbe38adb538f6b5593c587d580e978c270e27
     pullPolicy: Always
     ## Optionally specify an array of imagePullSecrets.
     ## Secrets must be manually created in the namespace.

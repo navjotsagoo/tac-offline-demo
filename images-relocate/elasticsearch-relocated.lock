@@ -1,0 +1,28 @@
+apiVersion: kbld.k14s.io/v1alpha1
+kind: Config
+minimumRequiredVersion: 0.24.0
+overrides:
+- image: gcr.io/sys-2b0109it/demo/bitnami/elasticsearch-curator:5.8.1-centos-7-r137
+  newImage: applecider.azurecr.io/tanzu-apps-catalog-offline-registry@sha256:150c85ccaf9b0fba4732f019119506681eda931dc3f1b46b5ce3e8bf0250b0bb
+  preresolved: true
+- image: gcr.io/sys-2b0109it/demo/bitnami/elasticsearch-exporter:1.1.0-centos-7-r138
+  newImage: applecider.azurecr.io/tanzu-apps-catalog-offline-registry@sha256:2f4498a3ce5c0b3b7db04e2400f35b3d3f8fb8ee0c78ec1cdb04cc342b5bc660
+  preresolved: true
+- image: gcr.io/sys-2b0109it/demo/bitnami/elasticsearch:7.9.1-centos-7-r0
+  newImage: applecider.azurecr.io/tanzu-apps-catalog-offline-registry@sha256:a7f491bed0dd699e54e412cdaa5e0ba5df0a409695c714070abde2292513595e
+  preresolved: true
+- image: gcr.io/sys-2b0109it/demo/bitnami/kibana:7.9.0-centos-7-r0
+  newImage: applecider.azurecr.io/tanzu-apps-catalog-offline-registry@sha256:fdd2b66f8f498e7f5563e697e1b84e22e7db440187b013acf93b188aecd29d1d
+  preresolved: true
+- image: gcr.io/sys-2b0109it/demo/bitnami/elasticsearch-curator@sha256:150c85ccaf9b0fba4732f019119506681eda931dc3f1b46b5ce3e8bf0250b0bb
+  newImage: applecider.azurecr.io/tanzu-apps-catalog-offline-registry@sha256:150c85ccaf9b0fba4732f019119506681eda931dc3f1b46b5ce3e8bf0250b0bb
+  preresolved: true
+- image: gcr.io/sys-2b0109it/demo/bitnami/elasticsearch-exporter@sha256:2f4498a3ce5c0b3b7db04e2400f35b3d3f8fb8ee0c78ec1cdb04cc342b5bc660
+  newImage: applecider.azurecr.io/tanzu-apps-catalog-offline-registry@sha256:2f4498a3ce5c0b3b7db04e2400f35b3d3f8fb8ee0c78ec1cdb04cc342b5bc660
+  preresolved: true
+- image: gcr.io/sys-2b0109it/demo/bitnami/elasticsearch@sha256:a7f491bed0dd699e54e412cdaa5e0ba5df0a409695c714070abde2292513595e
+  newImage: applecider.azurecr.io/tanzu-apps-catalog-offline-registry@sha256:a7f491bed0dd699e54e412cdaa5e0ba5df0a409695c714070abde2292513595e
+  preresolved: true
+- image: gcr.io/sys-2b0109it/demo/bitnami/kibana@sha256:fdd2b66f8f498e7f5563e697e1b84e22e7db440187b013acf93b188aecd29d1d
+  newImage: applecider.azurecr.io/tanzu-apps-catalog-offline-registry@sha256:fdd2b66f8f498e7f5563e697e1b84e22e7db440187b013acf93b188aecd29d1d
+  preresolved: true

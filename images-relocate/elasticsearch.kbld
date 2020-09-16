@@ -1,0 +1,5 @@
+images:
+- image: gcr.io/sys-2b0109it/demo/bitnami/elasticsearch:7.9.1-centos-7-r0
+- image: gcr.io/sys-2b0109it/demo/bitnami/elasticsearch-curator:5.8.1-centos-7-r137
+- image: gcr.io/sys-2b0109it/demo/bitnami/elasticsearch-exporter:1.1.0-centos-7-r138
+- image: gcr.io/sys-2b0109it/demo/bitnami/kibana:7.9.0-centos-7-r0

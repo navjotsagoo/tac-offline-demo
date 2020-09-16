@@ -1,10 +1,10 @@
 annotations:
   category: Analytics
 apiVersion: v1
-appVersion: 7.8.1
+appVersion: 7.9.1
 description: A highly scalable open-source full-text search and analytics engine
 engine: gotpl
-home: https://www.elastic.co/products/elasticsearch
+home: https://github.com/bitnami/charts/tree/master/bitnami/elasticsearch
 icon: https://bitnami.com/assets/stacks/elasticsearch/img/elasticsearch-stack-110x117.png
 keywords:
 - elasticsearch
@@ -14,4 +14,5 @@ maintainers:
 name: elasticsearch
 sources:
 - https://github.com/bitnami/bitnami-docker-elasticsearch
-version: 12.6.0
+- https://www.elastic.co/products/elasticsearch
+version: 12.6.3

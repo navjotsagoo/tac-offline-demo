@@ -3,9 +3,9 @@
 ## Current available global Docker image parameters: imageRegistry and imagePullSecrets
 ##
 global:
-  # imageRegistry: myRegistryName
-  # imagePullSecrets:
-  #   - myRegistryKeySecretName
+  imageRegistry: applecider.azurecr.io 
+  imagePullSecrets:
+    - acr-registry
   # storageClass: myStorageClass
   ## Coordinating name to be used in the Kibana subchart (service name)
   ##
@@ -17,9 +17,9 @@ global:
 ## ref: https://hub.docker.com/r/bitnami/elasticsearch/tags/
 ##
 image:
-  registry: gcr.io
-  repository: sys-2b0109it/demo/bitnami/elasticsearch
-  tag: 7.8.1-centos-7-r6
+  registry: applecider.azurecr.io
+  repository: tanzu-apps-catalog-offline-registry@sha256
+  tag: a7f491bed0dd699e54e412cdaa5e0ba5df0a409695c714070abde2292513595e
   ## Specify a imagePullPolicy
   ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
   ## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
@@ -29,8 +29,8 @@ image:
   ## Secrets must be manually created in the namespace.
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
   ##
-  # pullSecrets:
-  #   - myRegistryKeySecretName
+  pullSecrets:
+    - acr-registry
   ## Set to true if you would like to see extra information on logs
   ## ref:  https://github.com/bitnami/minideb-extras/#turn-on-bash-debugging
   ##
@@ -49,9 +49,9 @@ image:
 ##
 sysctlImage:
   enabled: false
-  registry: gcr.io
-  repository: sys-2b0109it/demo/bitnami/custom-base-image
-  tag: 2019-06
+  registry: applecider.azurecr.io
+  repository: tanzu-apps-catalog-offline-registry@sha256
+  tag: d9420538c705bb5d2e7ef3aa93ccbe38adb538f6b5593c587d580e978c270e27
   ## Specify a imagePullPolicy
   ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
   ## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
@@ -61,8 +61,8 @@ sysctlImage:
   ## Secrets must be manually created in the namespace.
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
   ##
-  # pullSecrets:
-  #   - myRegistryKeySecretName
+  pullSecrets:
+    - acr-registry
 
 ## Init containers parameters:
 ## volumePermissions: Change the owner and group of the persistent volume mountpoint to runAsUser:fsGroup values from the securityContext section.
@@ -70,16 +70,16 @@ sysctlImage:
 volumePermissions:
   enabled: false
   image:
-    registry: gcr.io
-    repository: sys-2b0109it/demo/bitnami/custom-base-image
-    tag: 2019-06
+    registry: applecider.azurecr.io
+    repository: tanzu-apps-catalog-offline-registry@sha256
+    tag: d9420538c705bb5d2e7ef3aa93ccbe38adb538f6b5593c587d580e978c270e27
     pullPolicy: Always
     ## Optionally specify an array of imagePullSecrets.
     ## Secrets must be manually created in the namespace.
     ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
     ##
-    # pullSecrets:
-    #   - myRegistryKeySecretName
+    pullSecrets:
+      - acr-registry
   ## Init container' resource requests and limits
   ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
   ##
@@ -616,16 +616,16 @@ curator:
   enabled: false
   name: curator
   image:
-    registry: gcr.io
-    repository: sys-2b0109it/demo/bitnami/elasticsearch-curator
-    tag: 5.8.1-centos-7-r114
+    registry: applecider.azurecr.io
+    repository: tanzu-apps-catalog-offline-registry@sha256
+    tag: 150c85ccaf9b0fba4732f019119506681eda931dc3f1b46b5ce3e8bf0250b0bb
     pullPolicy: IfNotPresent
     ## Optionally specify an array of imagePullSecrets.
     ## Secrets must be manually created in the namespace.
     ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
     ##
-    # pullSecrets:
-    #   - myRegistryKeySecretName
+    pullSecrets:
+      - acr-registry
 
   cronjob:
     # At 01:00 every day
@@ -784,16 +784,16 @@ metrics:
   enabled: true
   name: metrics
   image:
-    registry: gcr.io
-    repository: sys-2b0109it/demo/bitnami/elasticsearch-exporter
-    tag: 1.1.0-centos-7-r115
+    registry: applecider.azurecr.io
+    repository: tanzu-apps-catalog-offline-registry@sha256
+    tag: 2f4498a3ce5c0b3b7db04e2400f35b3d3f8fb8ee0c78ec1cdb04cc342b5bc660
     pullPolicy: IfNotPresent
     ## Optionally specify an array of imagePullSecrets.
     ## Secrets must be manually created in the namespace.
     ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
     ##
-    # pullSecrets:
-    #   - myRegistryKeySecretName
+    pullSecrets:
+      - acr-registry
   ## Elasticsearch Prometheus exporter service type
   ##
   service:

@@ -1,6 +1,6 @@
 dependencies:
 - name: kibana
   repository: https://charts.trials.tac.bitnami.com/demo
-  version: 5.3.0
+  version: 5.3.1
 digest: sha256:bfaf63c64af7ae3a8f65f55f10296b00bd2f0e28575307f00a8fc16572e562d7
-generated: "2020-08-04T10:35:34.231888217Z"
+generated: "2020-09-04T00:41:00.812607768Z"
